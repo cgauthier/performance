@@ -62,11 +62,15 @@ And moving content around or deleting content also required dynamic renumbering 
 
 Suffice to say, first we must load the document.
 
-When I first implemented by embedded loops using Array.map(arrow function), the performance was atrociously slow.
+Initially I used embedded loops using Array.map(arrow function), the performance was atrociously slow.
 
-Given a high performance gaming system, it took over 10 seconds to load and render the document.
+Considering I'm developing and testing locally on a high performance gaming system, I would expect fast results and yet it was taking about 10 seconds to load/render.
 
-Once I started to optimize the loops, going into a more traditional for loop format, for my code, I was able to load the and render the entire document in about 4 seconds.
+So, I decided to optimize, I knew from experience that functional callbacks in loops can potentially be slow, such it was easy for me to simply convert to for...ioop embedded structures.
+
+The data is in a predictable format, thus, no need to recursive code (which is also slow and memory intensive).
+
+The end result of the optimization is to load/render took less than 4 seconds.
 
 Thats'a huge performance gain.
 
@@ -78,18 +82,16 @@ The UI should do the least amount of processing possible.  We should try and off
 
 And with a bit of tweaking, I will eventually do that.
 
-But if I leave all of this in the front-end, I can also easily implement "Web Workers" as well.  Since there is no DOM manipulation, this is all computational, the processing would also increase. "So I suspect, I would need to profile! :)"
-
-The JSON being generated is added via the "initComponent" funciton of the viewer , which means that the layout system in ExtJS take overs and generates the view.
+But if I leave all of this in the front-end, I can also easily implement "Web Workers" as well.  Since there is no DOM manipulation, this is all computational, I suspect I can reduce my processing time as well >> Yes, I would need to profile.. :)
 
 
 ## In conclusion
 
-The demo you have access doesn't do much, some pre-calculated messages stuffed into arrays to be output in the debugger's console in a processing manner identical to the code I wrote.
+The demo you have access doesn't do much, some pre-calculated messages stuffed into arrays to be output in the debugger's console in a processing manner identical to the code I wrote for my document load/viewer.
 
 But it does demonstrate the fact that when it comes to performance, functional programming isn't always the best solution.
 
-
+So, keep an open mind and loop for optimization. :)
 
 
 
