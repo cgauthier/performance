@@ -14,6 +14,7 @@ Ext.define('Demo.view.main.Main', {
 
     ],
     bodyPadding: "40",
+    scrollable: true,
     title: "Demo - Performance Compare between For Loop and Functional Programming via Array.map",
     items: [{
         xtype: "container",
@@ -127,9 +128,9 @@ Ext.define('Demo.view.main.Main', {
                             <h3>Size of Outer Array is ${demoArrSize}</h3>
                             <h3>3 embedded inner loops are each the size of 10 items<h3>
                             <h4>For Loop</h4>
-                            <h5>Elapsed Time: ${elapsed1}</h5>
+                            <h5>Elapsed Time: ${elapsed1} ms</h5>
                             <h4>Array Map with Arrow Function</h4>
-                            <h5>Elapsed Time: ${elapsed2}</h5>`
+                            <h5>Elapsed Time: ${elapsed2} ms</h5>`
                 
                             resultsCmp.setHtml(msg);
                         }, 300);
