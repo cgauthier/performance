@@ -11,7 +11,23 @@ The purpose of this demo is to demonstrate that in certain cases, functional pro
 
 First of all, not all JS engines are identical and as such profiling should always be compared across the intended supported user agents.
 
-When there is processing involve in loops involving arrow based functions, then the optimization one would expect from the "one-liner" so to speak is effectively gone if this arrow function is embedded with more code functionality.
+What are key logistics to look for?
+
+1) Hardware
+2) OS
+3) Drivers
+4) Browser Client and Version.
+
+Performance pptimization of loops in functional programming isn't always guaranteed.  Arrow function acting as one-liners often have become more performant.
+
+But starting adding some complexity to the arrow function and you may see those performance bonus go away and thus acting more like a traditional callback.
+
+And volume speaks as well.
+
+Finally some optimization happen after the fact as well.
+
+As you start profiling with the app, volume and repetition will be another factor to observe.
+
 
 ## Performance as a requirement
 
@@ -51,10 +67,10 @@ Everything loaded into memory.
 
 One of the reasons for this is that "numbering" had to be dynamically done.
 
-Chapter 1
-Policy 100
-Section 100.1
-Subsection 100.1.1
+- Chapter 1
+- Policy 100
+- Section 100.1
+- Subsection 100.1.1
 
 New content created needs to be numbered on-the-fly, all other content has to quickly renumber itself.
 
@@ -89,7 +105,18 @@ But if I leave all of this in the front-end, I can also easily implement "Web Wo
 
 The demo you have access doesn't do much, some pre-calculated messages stuffed into arrays to be output in the debugger's console in a processing manner identical to the code I wrote for my document load/viewer.
 
-But it does demonstrate the fact that when it comes to performance, functional programming isn't always the best solution.
+But it does demonstrate the fact that when it comes to performance, functional programming isn't always the best solution.  Depending on a combination of factors such as:
+
+1) Hardware
+2) OS
+3) Drivers
+4) Browser Client and Version.
+
+You may see in some cases functional programming loops to be more efficient.
+
+Small arrays.
+
+But play with the main array size of the prototype and you will see that as the numbers go higher, performance does drop.
 
 So, keep an open mind and loop for optimization. :)
 
