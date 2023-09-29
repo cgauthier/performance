@@ -83,11 +83,11 @@ Ext.define('Demo.view.main.Main', {
                                 console.log(largeArr[x]);
                                 let smallArrLength = smallArr.length;
                                 for(y = 0; y < smallArrLength; y++) {
-                                    console.log(y);
+                                    console.log(smallArr[y]);
                                     for(z = 0; z < smallArrLength; z++) {
-                                        console.log(z);
+                                        console.log(smallArr[z]);
                                         for(i = 0; i < smallArrLength; i++) {
-                                            console.log(i);
+                                            console.log(smallArr[i]);
                                         }       
                                     }   
                                 }
