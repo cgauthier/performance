@@ -28,6 +28,12 @@ Finally some optimization happen after the fact as well.
 
 As you start profiling with the app, volume and repetition will be another factor to observe.
 
+## 2 Demos
+
+One demo is very simple, the output the content of an array ih the debugger's console.
+
+The second demo is more complex involving calculations, processing, random numbers.
+
 
 ## Performance as a requirement
 
@@ -103,18 +109,17 @@ But if I leave all of this in the front-end, I can also easily implement "Web Wo
 
 ## In conclusion
 
-The demo you have access doesn't do much, some pre-calculated messages stuffed into arrays to be output in the debugger's console in a processing manner identical to the code I wrote for my document load/viewer.
-
-But it does demonstrate the fact that when it comes to performance, functional programming isn't always the best solution.  Depending on a combination of factors such as:
+What you will get from the 2 demos is that when it comes to performance, functional programming isn't always the best solution.  Depending on a combination of factors such as:
 
 1) Hardware
 2) OS
 3) Drivers
 4) Browser Client and Version.
+5) Code to execute
 
 You may see in some cases functional programming loops to be more efficient.
 
-Small arrays.
+Small arrays with no code complexity.
 
 But play with the main array size of the prototype and you will see that as the numbers go higher, performance does drop.
 
