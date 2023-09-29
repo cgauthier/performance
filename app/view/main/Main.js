@@ -18,12 +18,12 @@ Ext.define('Demo.view.main.Main', {
     title: "Demo - Performance Compare between For Loop and Functional Programming via Array.map",
     items: [{
         xtype: "container",
-        html: "<h1>You can monitor result in the browser's console.<h1><h2>Each scenario resolves around going to embedded loops.  A major loop (preset to 10) in the code and all inner loops are based on a count of 10 items."
+        html: "<h1>You can monitor the processing in the browser's console.<h1><h2>This UI will also provide an update upon completion.</h2><h2>The premise is to run identical functioning code, one scenario with for...loops and the other using Array.map(() => {}) arrow function as a callback.</h2><h2>A total of 4 loops are embedded within each other, you have control of the first loop's seed number and all other inner loops are based on a count of 10 items.</h2><h2>Be aware that high values do take some time to process.</h2><h2>Console.log messages are asynchoronous, therefore the loops will finish much more quickly than the ability for the debugger's console message to be displayed.</h2>"
     }, {
         xtype: 'toolbar',
         items: [{
             xtype: "numberfield",
-            fieldLabel: "Type a value (beware, values beyond 100 may take a while to process) (no value defaults to 10)",
+            fieldLabel: "Type a value (empty value defaults to 10).",
             itemId: "limit",
             labelWidth: 300,
             defaultValue: 10,
@@ -127,9 +127,9 @@ Ext.define('Demo.view.main.Main', {
                             var msg = `<h2>Results</h2>
                             <h3>Size of Outer Array is ${demoArrSize}</h3>
                             <h3>3 embedded inner loops are each the size of 10 items<h3>
-                            <h4>For Loop</h4>
+                            <h4>Embedded For...Loop(s)</h4>
                             <h5>Elapsed Time: ${elapsed1} ms</h5>
-                            <h4>Array Map with Arrow Function</h4>
+                            <h4>Embedded Array.map(() => {}) with Arrow Function</h4>
                             <h5>Elapsed Time: ${elapsed2} ms</h5>`
                 
                             resultsCmp.setHtml(msg);
