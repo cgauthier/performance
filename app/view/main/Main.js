@@ -15,16 +15,22 @@ Ext.define('Demo.view.main.Main', {
     layout: "fit",
     title: "Demo - Performance Compare between For Loop and Functional Programming via Array.map",
     layout: {
-        type: "vbox",
-        pack: "start",
-        align: "stretch"
+        type: "anchor"
     },
     scrollable: true,
+    bodyPadding: "0",
     items: [{
+        anchor: "100%",
         xtype: "container",
-        html: "<h1>You can monitor the processing in the browser's console.<h1><h2>This UI will also provide an update upon completion.</h2><h2>The premise is to run identical functioning code, one scenario with for...loops and the other using Array.map(() => {}) arrow function as a callback.</h2><h2>A total of 4 loops are embedded within each other, you have control of the first loop's seed number and all other inner loops are based on a count of 10 items.</h2><h2>Be aware that high values do take some time to process.</h2><h2>Console.log messages are asynchoronous, therefore the loops will finish much more quickly than the ability for the debugger's console messages to be displayed.</h2>"
+        padding: "10",
+        html: `<h3>You can monitor the processing in the browser's console.<h3>
+        <h4>This UI will also provide an update upon completion.</h4>
+        <h4>The premise is to run identical functioning code, one scenario with for...loops and the other using Array.map(() => {}) arrow function as a callback.</h4>
+        <h4>A total of 4 loops are nested within each other, you have control of the first loop's seed number and all other inner loops are based on a count of 10 items.</h4>
+        <h4>Be aware that high values do take some time to process.</h4>
+        <h4>Console.log messages are asynchoronous, therefore the loops will finish much more quickly than the ability for the debugger's console messages to be displayed.</h4>`
     }, {
-        flex: 1,
+        anchor: "100%",
         xtype: 'tabpanel',
         defaults: {
             xtype: "panel",
@@ -41,7 +47,8 @@ Ext.define('Demo.view.main.Main', {
             itemId: "panel1",
             items: [{
                 xtype: "container",
-                html: "<h2>Simple processing of loop, output the content of generated arrays to the console.log</h2>"
+                html: "<h4>Simple processing of nested loops.</h4><h4>All outputs are sent to the console's debugger and we display the timing results in the UI.</h4>"
+
             }, {
                 xtype: 'toolbar',
                 items: [{
@@ -59,7 +66,7 @@ Ext.define('Demo.view.main.Main', {
                             fn: function(btn) {
                                 let p = btn.up('panel[itemId=panel1]');
                                 let resultsCmp = p.down('container[itemId=results]');
-                                resultsCmp.setHtml("");
+                                resultsCmp.setHtml("Processing...");
             
                                 window.setTimeout(function() {
                                     let numberField = btn.prev();
@@ -173,7 +180,8 @@ Ext.define('Demo.view.main.Main', {
             itemId: "panel2",
             items: [{
                 xtype: "container",
-                html: "<h2>Using generated arrays to provide a loop structure, each loop calculates a random number based on array's length and then creates a message to determine if the random is lesser than or equal to the array's length.</h2><h2>Output of array index and the random number along with a message is sent to the debugger's console.</h2>"
+                html: `<h4>Using generated arrays to provide a loop structure, each loop calculates a random number based on array's length and then creates a message to determine if the random is lesser than or equal to the array's length.</h4>
+                <h4>All outputs are sent to the console's debugger and we display the timing results in the UI.</h4>`
             }, {
                 xtype: 'toolbar',
                 items: [{
@@ -191,8 +199,8 @@ Ext.define('Demo.view.main.Main', {
                             fn: function(btn) {
                                 let p = btn.up('panel[itemId=panel2]');
                                 let resultsCmp = p.down('container[itemId=results]');
-                                resultsCmp.setHtml("");
-            
+                                resultsCmp.setHtml("Processing...");
+
                                 window.setTimeout(function() {
                                     let numberField = btn.prev();
                                     let v = numberField.getValue();

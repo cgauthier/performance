@@ -7,7 +7,7 @@ http://www.claudegauthier.net/demos/performance/index.html
 
 ## Introduction
 
-The purpose of this demo is to demonstrate that in certain cases, functional programming in JS is not always going to achieve high levels of performance while processing embedded loops.
+The purpose of this demo is to demonstrate that in certain cases, functional programming in JS is not always going to achieve high levels of performance while processing nested loops.
 
 First of all, not all JS engines are identical and as such profiling should always be compared across the intended supported user agents.
 
@@ -18,15 +18,11 @@ What are key logistics to look for?
 3) Drivers
 4) Browser Client and Version.
 
-Performance pptimization of loops in functional programming isn't always guaranteed.  Arrow function acting as one-liners often have become more performant.
+Performance optimization of loops in functional programming isn't always guaranteed.  Arrow function acting as one-liners often have become more performant.
 
-But starting adding some complexity to the arrow function and you may see those performance bonus go away and thus acting more like a traditional callback.
+But when adding some complexity to the arrow function and you may see those performance bonus go away and thus acting more like a traditional callback.
 
-And volume speaks as well.
-
-Finally some optimization happen after the fact as well.
-
-As you start profiling with the app, volume and repetition will be another factor to observe.
+And the volume of loop iterations will also be a key factor to take into account.
 
 ## 2 Demos
 
@@ -84,15 +80,15 @@ And moving content around or deleting content also required dynamic renumbering 
 
 Suffice to say, first we must load the document.
 
-Initially I used embedded loops using Array.map(arrow function), the performance was atrociously slow.
+Initially I used nested loops with Array.map(arrow function), the performance was atrociously slow.
 
 Considering I'm developing and testing locally on a high performance gaming system, I would expect fast results and yet it was taking about 10 seconds to load/render.
 
-So, I decided to optimize, I knew from experience that functional callbacks in loops can potentially be slow, such it was easy for me to simply convert to for...ioop embedded structures.
+So, I decided to optimize, I knew from experience that functional callbacks in loops can potentially be slow, such it was easy for me to simply convert to for...ioop nested structures.
 
 The data is in a predictable format, thus, no need to recursive code (which is also slow and memory intensive).
 
-The end result of the optimization is to load/render took less than 4 seconds.
+The end result of the optimization is a load/render which took less than 4 seconds.
 
 Thats'a huge performance gain.
 
@@ -121,9 +117,9 @@ You may see in some cases functional programming loops to be more efficient.
 
 Small arrays with no code complexity.
 
-But play with the main array size of the prototype and you will see that as the numbers go higher, performance does drop.
+But play with the main array size of the prototype and you will see that as the numbers go higher, performance does drop rather dramatically.
 
-So, keep an open mind and loop for optimization. :)
+So, I guess the moral of the story here is don't assume anything.  Profile based on your real-world usecase.  
 
 
 
